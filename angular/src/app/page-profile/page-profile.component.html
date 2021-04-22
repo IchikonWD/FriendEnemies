@@ -1,0 +1,216 @@
+<div id="wrapper">
+  <ul
+    class="navbar-nav bg-gradient-primary sidebar auto-toggle sidebar-dark accordion"
+    id="accordionSidebar"
+  >
+    <app-sidebar></app-sidebar>
+  </ul>
+
+  <!-- Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <!-- Contenido Principal -->
+    <div id="content" class="min-vh-100">
+      <app-topbar></app-topbar>
+
+      <div class="container-fluid">
+        <div class="row mb-5 grow-1">
+          <div id="me" class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="rounded-0 shadow card">
+              <div class="rounded-0 card-header p-0 bg-white border-0">
+                <div
+                  class="bg-purple position-relative pt-4 profile-img d-flex justify-content-center"
+                >
+                  <img
+                    src="/assets/images/{{ profilePicture }}.jpg"
+                    class="border border-thick rounded-circle profile-img-lg"
+                  />
+                </div>
+              </div>
+              <div class="card-body bg-purple text-center">
+                <h3 class="text-white">{{ usersName }}</h3>
+                <p class="w-50 h6 mx-auto text-white">
+                  Soy una persona normal. Mi correo es: {{ usersEmail }}.
+                  Tambien me registre en FriendEnemies!
+                </p>
+
+                <div class="my-4">
+                  <div *ngIf="haveReceivedFriendRequest" class="my-4">
+                    <hr class="w-25 my-4 bg-white" />
+
+                    <h6 class="text-white font-weight-200">
+                      Este usuario te ha enviado una petición de amistad.
+                    </h6>
+                    <button
+                      (click)="accept()"
+                      class="btn btn-sm btn-success rounded-pill m-1 px-4"
+                    >
+                      Aceptar
+                    </button>
+
+                    <button
+                      (click)="decline()"
+                      class="btn btn-sm btn-danger rounded-pill m-1 px-4"
+                    >
+                      Rechazar
+                    </button>
+
+                    <hr class="w-25 my-4 bg-white" />
+                  </div>
+
+                  <button
+                    *ngIf="haveSentFriendRequest"
+                    class="btn btn-warning rounded-pill m-1"
+                  >
+                    Peticion de amistad pendiente
+                  </button>
+
+                  <button
+                    *ngIf="
+                      canAddUser &&
+                      !haveSentFriendRequest &&
+                      !haveReceivedFriendRequest
+                    "
+                    class="btn btn-light text-primary rounded-pill m-1"
+                    (click)="makeFriendRequest()"
+                  >
+                    Add Friend
+                  </button>
+
+                  <button
+                    *ngIf="canSendMessage"
+                    class="btn btn-info rounded-pill m-1"
+                    data-toggle="modal"
+                    data-target="#staticBackdrop"
+                    (click)="updateSendMessageObject(usersId, usersName)"
+                  >
+                    Send Message
+                  </button>
+                </div>
+
+                <hr class="w-25 my-4 bg-white" />
+                <div class="h4 text-white">
+                  Amigos: <span>{{ totalFriends }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              *ngIf="randomFriends.length"
+              id="friends-list"
+              class="card shadow rounded-0 mt-4 pb-3"
+            >
+              <div class="row m-0">
+                <div
+                  *ngFor="let friend of randomFriends"
+                  class="col-xl-4 col-6 mt-5"
+                >
+                  <div class="friend">
+                    <img
+                      routerLink="/profile/{{ friend._id }}"
+                      src="/assets/images/{{ friend.profile_image }}.jpg"
+                    />
+                    <h5 class="text-center pb-1">
+                      <a
+                        routerLink="/profile/{{ friend._id }}"
+                        class="link text-purple font-weight-400"
+                        >{{ friend.name }}</a
+                      >
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="!canAddUser && canSendMessage" class="text-center mt-5">
+              <div *ngIf="!isBestie && !isEnemy">
+                <div
+                  *ngIf="!maxAmountOfBesties"
+                  (click)="toggleRequest('besties')"
+                  class="hov-scale h1 font-weight-900 px-4 link text-primary m-1"
+                >
+                  Hazte mejor amigo
+                </div>
+
+                <div
+                  *ngIf="maxAmountOfBesties"
+                  class="w-75 mx-auto hov-scale h4 font-weight-500 p-2 px-4 link text-primary m-1"
+                >
+                  Solo puedes tener dos mejores amigos!
+                </div>
+
+                <div
+                  (click)="toggleRequest('enemies')"
+                  class="hov-scale h1 font-weight-900 px-4 link text-danger m-1"
+                >
+                  Declarar Enemigo
+                </div>
+              </div>
+
+              <div
+                *ngIf="isBestie"
+                (click)="toggleRequest('besties')"
+                class="hov-scale h2 font-weight-300 link text-primary m-1"
+              >
+                Tu y {{ usersName }} sois
+                <span class="font-weight-900">Mejores amigos!</span>
+                <div class="h6 mt-2 text-uppercase text-dark">
+                  Click para deshacer
+                </div>
+              </div>
+
+              <div
+                *ngIf="isEnemy"
+                (click)="toggleRequest('enemies')"
+                class="hov-scale h2 font-weight-300 link text-danger m-1"
+              >
+                Tu y {{ usersName }} sois
+                <span class="font-weight-900">Enemigos!</span>
+                <div class="h6 mt-2 text-uppercase text-dark">
+                  Click para deshacer
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="recent-posts" class="col-12 col-lg-8 mt-5 mt-md-0">
+            <h3
+              class="text-success shadow py-3 text-center bg-white rounded-pill"
+            >
+              Posts Recientes
+            </h3>
+
+            <app-post
+              *ngFor="let post of posts.slice(0, showPosts)"
+              [post]="post"
+            ></app-post>
+
+            <a
+              (click)="showMorePosts()"
+              *ngIf="posts.length && showPosts < posts.length && showPosts"
+              class="bg-success d-block mt-4 py-3 text-center rounded-pill text-white link h5"
+              >Load More</a
+            >
+
+            <h3
+              *ngIf="!showPosts"
+              class="text-center w-75 mx-auto mt-5 text-purple"
+            >
+              Añade este usuario como amigo para ver sus últimos posts.
+            </h3>
+
+            <div *ngIf="posts.length && showPosts >= posts.length">
+              <h2 class="mt-5 text-primary text-center">
+                No hay mas posts, has stalkeado totalmente a este usuario.
+              </h2>
+              <a
+                (click)="backToTop()"
+                class="link h4 text-center d-block w-max mx-auto my-3"
+                >Volver Arriba</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

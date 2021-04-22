@@ -1,0 +1,92 @@
+<app-form-bg></app-form-bg>
+
+<div class="bg-gradient-primary min-vh-100">
+  <div class="bg-2">
+    <div class="container">
+      <!-- Registro -->
+      <div class="text-white pt-6 pt-sm-15vh">
+        <div *ngIf="formError" class="alert alert-primary text-primary mb-5">
+          {{ formError }}
+        </div>
+
+        <div class="brand-icon text-center display-4">
+          <img src="/assets/images/logo300x300.png" alt="FriendEnemies logo" />
+        </div>
+
+        <h1 class="font-weight-800 text-center display-4">FriendEnemies</h1>
+        <p class="resp h4 w-50 mx-auto text-center" style="line-height: 150%">
+          Una red social para gente real. <br />
+          Ten a tus amigos cerca, pero a tus enemigos aun mas cerca.
+        </p>
+
+        <h2 class="font-weight-300 mt-4 text-center">Registrate ahora!</h2>
+
+        <form class="register-form user mt-5" (submit)="formSubmit()">
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <input
+                type="text"
+                class="form-control form-control-user"
+                id="exampleFirstName"
+                placeholder="Nombre"
+                name="first_name"
+                [(ngModel)]="credentials.first_name"
+              />
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="text"
+                class="form-control form-control-user"
+                id="exampleLastName"
+                placeholder="Apellidos"
+                name="last_name"
+                [(ngModel)]="credentials.last_name"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control form-control-user"
+              id="exampleInputEmail"
+              placeholder="Dirección de Email"
+              name="email"
+              [(ngModel)]="credentials.email"
+            />
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <input
+                type="password"
+                class="form-control form-control-user"
+                id="exampleInputPassword"
+                placeholder="Contraseña"
+                name="password"
+                [(ngModel)]="credentials.password"
+              />
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="password"
+                class="form-control form-control-user"
+                id="exampleRepeatPassword"
+                placeholder="Confirmar Contraseña"
+                name="password_confirm"
+                [(ngModel)]="credentials.password_confirm"
+              />
+            </div>
+          </div>
+          <input
+            type="submit"
+            class="btn btn-primary btn-user btn-block"
+            value="Registra tu cuenta"
+          />
+        </form>
+        <h4 class="text-center p-5 m-0">
+          Ya tienes una cuenta?
+          <a routerLink="/login" class="text-white link">Entrar</a>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

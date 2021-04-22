@@ -1,0 +1,108 @@
+<a
+  class="sidebar-brand d-flex align-items-center justify-content-center"
+  href=""
+  routerLink="/feed"
+>
+  <div class="sidebar-brand-icon">
+    <img src="/assets/images/favicon/favicon-32x32.png" alt="" />
+  </div>
+  <div class="sidebar-brand-text mx-3">Friend|Enemies</div>
+</a>
+
+<!-- Divider -->
+
+<hr class="sidebar-divider my-0" />
+
+<!-- Nav Item - Dashboard -->
+<div class="sidebar-heading">Menu</div>
+<li class="nav-item">
+  <a class="nav-link" href="" routerLink="/profile/{{ userId }}">
+    <i class="far fa-address-card"></i>
+    <span>Perfil</span>
+  </a>
+  <a class="nav-link" href="" routerLink="/feed">
+    <i class="fas fa-rss-square"></i>
+    <span>Feed</span>
+  </a>
+  <a class="nav-link" href="" routerLink="/messages">
+    <i class="fas fa-envelope fa-fw"></i>
+    <span>Mensajes</span>
+  </a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider" />
+
+<!-- Friendships Heading -->
+<div class="sidebar-heading">Amistades</div>
+
+<!-- Besties -->
+<li class="nav-item">
+  <a
+    class="nav-link collapsed w-100 pr-md-5"
+    href="#"
+    data-toggle="collapse"
+    data-target="#besties"
+  >
+    <i class="fas fa-user-friends"></i>
+    <span>Mejores Amigos</span>
+  </a>
+  <div id="besties" class="collapse" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded w-100">
+      <div *ngIf="!besties.length" class="m-3">No tienes mejores Amigos :(</div>
+
+      <div *ngFor="let bestie of besties" class="m-3">
+        <img
+          routerLink="/profile/{{ bestie._id }}"
+          class="link img-fluid rounded-circle profile-img-sm"
+          src="/assets/images/{{ bestie.profile_image }}.jpg"
+        />
+        <span class="h6 ml-3"
+          ><a routerLink="/profile/{{ bestie._id }}" class="link small">{{
+            bestie.name
+          }}</a></span
+        >
+      </div>
+    </div>
+  </div>
+</li>
+
+<!-- Enemies -->
+<li class="nav-item">
+  <a
+    class="nav-link collapsed w-100 pr-md-5"
+    href="#"
+    data-toggle="collapse"
+    data-target="#enemies"
+    aria-expanded="true"
+    aria-controls="collapseEnemies"
+  >
+    <i class="fas fa-skull-crossbones"></i>
+    <span>Enemigos</span>
+  </a>
+  <div id="enemies" class="collapse" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <div *ngIf="!enemies.length" class="m-3">
+        No tienes enemigos. Todavia...
+      </div>
+
+      <div *ngFor="let enemy of enemies" class="m-3">
+        <img
+          routerLink="/profile/{{ enemy._id }}"
+          class="link img-fluid rounded-circle profile-img-sm"
+          src="/assets/images/{{ enemy.profile_image }}.jpg"
+        />
+        <span class="h6 ml-3"
+          ><a
+            routerLink="/profile/{{ enemy._id }}"
+            class="text-danger link small"
+            >{{ enemy.name }}</a
+          ></span
+        >
+      </div>
+    </div>
+  </div>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider" />
