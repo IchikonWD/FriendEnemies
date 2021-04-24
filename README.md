@@ -3,7 +3,7 @@
 <!-- LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/IchikonWD/FriendEnemies/blob/master/angular/src/assets/images/logo300x300.png">
+  <a href="angular/src/assets/images/logo300x300.png">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
