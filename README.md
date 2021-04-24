@@ -4,7 +4,6 @@
 <p align="center">
     Mean Stack - A Social Media Project
     <br />
-    ·
     <a href="https://github.com/IchikonWD/FriendEnemies/issues">Reportar Bug</a>
     ·
     <a href="https://github.com/IchikonWD/FriendEnemies/issues">Solicitar Nueva Característica</a>
@@ -145,6 +144,8 @@ Link del proyecto: [https://github.com/IchikonWD/FriendEnemies](https://github.c
 <!-- Reconocimientos -->
 
 ## Reconocimientos
+
+Estos son otras librerías e IDE utilizados para el desarrollo de este proyecto.
 
 - [SB Admin 2](https://startbootstrap.com/theme/sb-admin-2)
 - [Font Awesome](https://fontawesome.com)
