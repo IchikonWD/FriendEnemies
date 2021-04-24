@@ -1,10 +1,10 @@
-const jwt = require('express-jwt');
+const jwt = require("express-jwt");
 
 const authorize = jwt({
-    secret: process.env.JWT_SECRET,
-    userProperty: 'payload'
+  secret: process.env.JWT_SECRET,
+  userProperty: "payload",
 });
 
 module.exports = {
-    authorize
-}
+  authorize,
+};
