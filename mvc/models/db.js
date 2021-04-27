@@ -13,21 +13,21 @@ mongoose.connect(dbURI, { useNewUrlParser: true });
 // heroku logs --tail
 
 mongoose.connection.on('connected', () => {
-    console.log(`Mongoose connected to ${dbURI}`);
+    console.log(`Mongoose esta conectado a ${dbURI}`);
 });
 
 mongoose.connection.on('error', err => {
-    console.log(`Mongoose connection error: ${err}`);
+    console.log(`Mongoose error de conexion: ${err}`);
 });
 
 mongoose.connection.on('disconnected', () => {
-    console.log('Mongoose disconnected');
+    console.log('Mongoose desconectado');
 });
 
 
 const gracefulShutdown = (msg, callback) => {
     mongoose.connection.close( () => {
-        console.log(`Mongoose disconnected through ${msg}`);
+        console.log(`Mongoose desconectado mediante ${msg}`);
         callback();
     });
 };

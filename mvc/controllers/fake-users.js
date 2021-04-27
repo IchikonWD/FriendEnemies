@@ -662,7 +662,7 @@ const createFakeUsers = function (req, res) {
   deleteUsers.then((val) => {
     create70Users().then((val) => {
       makeFriends(val).then((val) => {
-        res.statusJson(201, { message: "Created Fake Users" });
+        res.statusJson(201, { message: "Fake users creados" });
       });
     });
   });
