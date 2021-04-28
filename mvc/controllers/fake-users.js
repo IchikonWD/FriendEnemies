@@ -5,73 +5,73 @@ const Post = mongoose.model("Post");
 const Comment = mongoose.model("Comment");
 
 let maleNames = [
-  "Liam",
-  "Noah",
-  "William",
-  "James",
-  "Oliver",
-  "Benjamin",
-  "Elijah",
+  "Antonio",
+  "Jose",
+  "Manuel",
+  "Francisco",
+  "David",
+  "Juan",
+  "Jose Antonio",
   "Lucas",
-  "Mason",
-  "Logan",
-  "Alexander",
-  "Ethan",
-  "Jacob",
-  "Michael",
+  "Javier",
   "Daniel",
-  "Henry",
-  "Jackson",
+  "Jose Luis",
+  "Luis",
+  "Carlos",
+  "Jesus",
+  "Alejandro",
+  "Rafael",
+  "Miguel",
   "Sebastian",
-  "Aiden",
-  "Matthew",
+  "Miguel Angel",
+  "Pedro",
   "Samuel",
   "David",
-  "Joseph",
-  "Carter",
-  "Owen",
-  "Wyatt",
-  "John",
-  "Jack",
-  "Luke",
-  "Jayden",
-  "Dylan",
-  "Grayson",
-  "Levi",
-  "Isaac",
+  "Pablo",
+  "Angel",
+  "Sergio",
+  "Raul",
+  "Ivan",
+  "Ignacio",
+  "Ramon",
+  "Adrian",
+  "Fernando",
+  "Oscar",
+  "Joaquin",
+  "Julio",
   "Gabriel",
   "Julian",
   "Mateo",
-  "Anthony",
-  "Jaxon",
-  "Lincoln",
-  "Joshua",
-  "Christopher",
-  "Andrew",
-  "Theodore",
-  "Caleb",
+  "Mohamed",
+  "Guillermo",
+  "Salvador",
+  "Felix",
+  "Nicolas",
+  "Agustin",
+  "Martin",
+  "Tomas",
   "Ryan",
-  "Asher",
-  "Nathan",
-  "Thomas",
+  "Marcos",
+  "Marc",
+  "Jordi",
   "Leo",
-  "Isaiah",
-  "Charles",
-  "Josiah",
-  "Hudson",
-  "Christian",
-  "Hunter",
-  "Connor",
-  "Eli",
-  "Ezra",
-  "Aaron",
-  "Landon",
+  "Hector",
+  "Felipe",
+  "Domingo",
+  "Iker",
+  "Xavier",
+  "Jose Andres",
+  "Agustin",
+  "Cristo",
+  "Mariano",
+  "Xavier",
+  "Joel",
   "Adrian",
-  "Jonathan",
-  "Nolan",
-  "Jeremiah",
-  "Easton",
-  "Elias",
+  "Dario",
+  "Mateo",
+  "Albert",
+  "Felipe",
+  "Victor Manuel",
   "Colton",
   "Cameron",
   "Carson",
@@ -106,272 +106,234 @@ let maleNames = [
 ];
 
 let femaleNames = [
-  "Emma",
+  "Maria",
   "Olivia",
-  "Ava",
-  "Isabella",
-  "Sophia",
-  "Charlotte",
-  "Mia",
-  "Amelia",
-  "Harper",
-  "Evelyn",
-  "Abigail",
-  "Emily",
-  "Elizabeth",
-  "Mila",
-  "Ella",
-  "Avery",
+  "Carmen",
+  "Isabel",
   "Sofia",
-  "Camila",
-  "Aria",
-  "Scarlett",
-  "Victoria",
-  "Madison",
-  "Luna",
-  "Grace",
-  "Chloe",
-  "Penelope",
-  "Layla",
-  "Riley",
-  "Zoey",
-  "Nora",
-  "Lily",
-  "Eleanor",
-  "Hannah",
-  "Lillian",
-  "Addison",
-  "Aubrey",
-  "Ellie",
-  "Stella",
-  "Natalie",
-  "Zoe",
-  "Leah",
-  "Hazel",
-  "Violet",
-  "Aurora",
-  "Savannah",
-  "Audrey",
-  "Brooklyn",
-  "Bella",
-  "Claire",
-  "Skylar",
-  "Lucy",
-  "Paisley",
-  "Everly",
-  "Anna",
-  "Caroline",
-  "Nova",
-  "Genesis",
-  "Emilia",
-  "Kennedy",
-  "Samantha",
-  "Maya",
-  "Willow",
-  "Kinsley",
-  "Naomi",
-  "Aaliyah",
+  "Dolores",
+  "Pilar",
+  "Teresa",
+  "Rosa",
+  "Josefa",
+  "Cristina",
+  "Angeles",
+  "Laura",
+  "Antonia",
   "Elena",
-  "Sarah",
-  "Ariana",
-  "Allison",
-  "Gabriella",
-  "Alice",
-  "Madelyn",
-  "Cora",
-  "Ruby",
+  "Marta",
+  "Francisca",
+  "Camila",
+  "Lucia",
+  "Mercedes",
+  "Victoria",
+  "Luisa",
+  "Luna",
+  "Concepcion",
+  "Rosario",
+  "Penelope",
+  "Paula",
+  "Sara",
+  "Raquel",
+  "Nora",
+  "Juana",
+  "Manuela",
+  "Hannah",
   "Eva",
-  "Serenity",
-  "Autumn",
-  "Adeline",
-  "Hailey",
-  "Gianna",
+  "Rocio",
+  "Beatriz",
+  "Patricia",
+  "Victoria",
+  "Julia",
+  "Zoe",
+  "Belen",
+  "Andrea",
+  "Violeta",
+  "Aurora",
+  "Esther",
+  "Nuria",
+  "Irene",
+  "Montserrat",
+  "Angela",
+  "Sandra",
+  "Inmaculada",
+  "Monica",
+  "Alicia",
+  "Yolanda",
+  "Carolina",
+  "Nova",
+  "Sonia",
+  "Emilia",
+  "Mar",
+  "Marina",
+  "Margarita",
+  "Susana",
+  "Natalia",
+  "Naomi",
+  "Claudia",
+  "Sofia",
+  "Sara",
+  "Ariana",
+  "Gloria",
+  "Amparo",
+  "Ines",
+  "Nieves",
+  "Cora",
+  "Lourdes",
+  "Soledad",
+  "Carla",
+  "Alejandra",
+  "Daniela",
+  "Luz",
+  "Noelia",
   "Valentina",
-  "Isla",
-  "Eliana",
-  "Quinn",
-  "Nevaeh",
-  "Ivy",
-  "Sadie",
-  "Piper",
+  "Lorena",
+  "Begoña",
+  "Fatima",
+  "Consuelo",
+  "Asuncion",
+  "Olga",
+  "Blanca",
   "Lydia",
   "Alexa",
-  "Josephine",
-  "Emery",
-  "Julia",
-  "Delilah",
-  "Arianna",
-  "Vivian",
-  "Kaylee",
-  "Sophie",
-  "Brielle",
-  "Madeline",
+  "Nerea",
+  "Miriam",
+  "Milagros",
+  "Esperanza",
+  "Lidia",
+  "Catalina",
+  "Aurora",
+  "Celia",
+  "Adriana",
+  "Elisa",
 ];
 
 let familyNames = [
-  "Smith",
-  "Johnson",
-  "Williams",
-  "Jones",
-  "Brown",
-  "Davis",
-  "Miller",
-  "Wilson",
-  "Moore",
-  "Taylor",
-  "Anderson",
-  "Thomas",
-  "Jackson",
-  "White",
-  "Harris",
+  "Gonzalez",
+  "Rodriguez",
+  "Migueles",
+  "Abraira",
+  "Pena",
+  "Ornes",
+  "Alvarez",
+  "Garcia",
+  "Fernandez",
+  "López",
+  "Martínez",
+  "Sánchez",
+  "Pérez",
+  "Gómez",
   "Martin",
-  "Thompson",
+  "Jiménez",
+  "Ruiz",
   "Garcia",
   "Martinez",
-  "Robinson",
-  "Clark",
-  "Rodriguez",
-  "Lewis",
-  "Lee",
-  "Walker",
-  "Hall",
-  "Allen",
-  "Young",
-  "Hernandez",
-  "King",
-  "Wright",
+  "Hernández",
+  "Diaz",
+  "Moreno",
+  "Muñoz",
+  "Romero",
+  "Alonso",
+  "Gutiérrez",
+  "Navarro",
+  "Torres",
+  "Domínguez",
+  "Vázquez",
+  "Ramos",
   "Lopez",
-  "Hill",
-  "Scott",
-  "Green",
-  "Adams",
-  "Baker",
+  "Gil",
+  "Serrano",
+  "Blanco",
+  "Molina",
+  "Morales",
   "Gonzalez",
-  "Nelson",
-  "Carter",
-  "Mitchell",
-  "Perez",
-  "Roberts",
-  "Turner",
-  "Phillips",
-  "Campbell",
-  "Parker",
-  "Evans",
-  "Edwards",
-  "Collins",
-  "Stewart",
+  "Ortega",
+  "Delgado",
+  "Castro",
+  "Ortiz",
+  "Rubio",
+  "Marín",
+  "Sanz",
+  "Núñez",
+  "Iglesias",
+  "Garrido",
+  "Medina",
+  "Santos",
+  "Castillo",
   "Sanchez",
   "Morris",
-  "Rogers",
-  "Reed",
-  "Cook",
-  "Morgan",
-  "Bell",
-  "Murphy",
-  "Bailey",
+  "Cortes",
+  "Calvo",
+  "Méndez",
+  "Prieto",
+  "Cano",
+  "Guerrero",
+  "Cruz",
   "Rivera",
-  "Cooper",
-  "Richardson",
-  "Cox",
-  "Howard",
-  "Ward",
-  "Torres",
-  "Peterson",
-  "Gray",
-  "Ramirez",
-  "James",
-  "Watson",
-  "Brooks",
-  "Kelly",
-  "Sanders",
-  "Price",
-  "Bennett",
-  "Wood",
-  "Barnes",
-  "Ross",
-  "Henderson",
-  "Coleman",
-  "Jenkins",
-  "Perry",
-  "Powell",
-  "Long",
-  "Patterson",
-  "Hughes",
-  "Flores",
-  "Washington",
-  "Butler",
-  "Simmons",
-  "Foster",
-  "Gonzales",
-  "Bryant",
-  "Alexander",
-  "Ussell",
-  "Griffin",
-  "Diaz",
-  "Hayes",
+  "Lozano",
 ];
 
 let fakePosts = {
   hardcodedPosts: [
-    "Time flies like an arrow. Fruit flies like a banana.",
-    "The reports of my death have been greatly exaggerated.",
-    "I have an old VCR.  Does anyone want it?",
+    "El placer y la acción hacen que las horas parezcan cortas.",
+    "La inteligencia es la habilidad de adaptarse al cambio.",
+    "La envidia es una declaración de inferioridad.",
     "Happy ;D",
-    "Sad :(",
-    "Derps a lot, everyday.",
-    "If debugging is the process of removing software bugs, then programming must be the process of putting them in.",
+    "No malgastes tu tiempo, pues de esa materia está formada la vida.",
+    "Educación es lo que queda después de olvidar lo que se ha aprendido en la escuela.",
+    "Solo hay una felicidad en la vida – amar y ser amado.",
     "Deleted code is debugged code.",
-    "Before you judge a man, walk a mile in his shoes. After that who cares?... He’s a mile away and you’ve got his shoes!",
-    "People say nothing is impossible, but I do nothing every day.",
+    "No busques los errores, busca un remedio.",
+    "Solo hay una felicidad en la vida – amar y ser amado.",
     "gg",
-    "Scotland's national animal is the Unicorn.",
-    "Nobody realizes that some people expend tremendous energy merely to be normal - Pretty much me.",
+    "El éxito depende del esfuerzo.",
+    "Todos somos muy ignorantes. Lo que ocurre es que no todos ignoramos las mismas cosas.",
     "Eh.",
-    "I have a big announcement everyone.  I'm going to bed.",
-    "Practice Makes Permanent",
-    "It's so cold outside...",
-    "I need a vacation.",
-    "Good morning :)",
-    "Summer soon!",
-    "Today is soo ughh",
+    "La muerte destroza al hombre: la idea de la muerte le salva.",
+    "La gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales.",
+    "No malgastes tu tiempo, pues de esa materia está formada la vida.",
+    "Cuando el hombre no se encuentra a sí mismo, no encuentra nada.",
+    "La envidia es una declaración de inferioridad.",
+    "De todos los animales de la creación el hombre es el único que bebe sin tener sed, come sin tener hambre y habla sin tener nada que decir.",
+    "No busques los errores, busca un remedio.",
     "Facebook just sounds like a drag, in my day seeing pictures of peoples vacations was considered a punishment - Betty White",
-    "A bank is a place that will lend you money if you can prove that you don’t need it.",
-    "Great :)",
-    "I thought today was Friday :(",
-    "Infinity doesn't exist. Change my mind.",
-    "Free will doesn't exist. Change my mind.",
-    "I just fed two birds with one scone.",
+    "Educación es lo que queda después de olvidar lo que se ha aprendido en la escuela.",
+    "La inteligencia es la habilidad de adaptarse al cambio.",
+    "Quien tiene paciencia, obtendrá lo que desea.",
+    "Una buena cabeza y un buen corazón son siempre combinaciones formidables.",
+    "El éxito depende del esfuerzo.",
+    "Una buena cabeza y un buen corazón son siempre combinaciones formidables.",
     "WOW",
     "P = NP",
     "E = MC^2",
-    "Over the hills and far away.",
+    "La confianza en sí mismo es el primer secreto del éxito.",
     "I like coffee.",
     "I'm a robot.",
     "Oops...",
     "BOOP",
-    "What if the universe is a simulation?",
+    "Solo hay una felicidad en la vida – amar y ser amado.",
     "Winner winner chicken dinner.",
-    "Today is the first day of the rest of your life.",
+    "Cuando el hombre no se encuentra a sí mismo, no encuentra nada.",
     "I'm flying today!",
-    "I just found out that some infinites are bigger than other infinites.  Mind = Blown.",
-    "Margaret Thatcher is 110% Sexy",
-    "The chicken came before the egg.",
-    "I'm tired.",
+    "Todos somos muy ignorantes. Lo que ocurre es que no todos ignoramos las mismas cosas.",
+    "Margaret Thatcher es 110% Sexy",
+    "La inteligencia es la habilidad de adaptarse al cambio.",
+    "El placer y la acción hacen que las horas parezcan cortas.",
     "Just woke up :)",
-    "Finally some good news.",
-    "It's so simple.",
+    "La envidia es una declaración de inferioridad.",
+    "No malgastes tu tiempo, pues de esa materia está formada la vida.",
     "...My friend talks too much.",
     "Loving this Saturday.",
-    "My favorite machine at the gym is the vending machine.",
-    "Don’t worry about the world coming to an end today. It is already tomorrow in Australia.",
+    "La confianza en sí mismo es el primer secreto del éxito.",
+    "La muerte destroza al hombre: la idea de la muerte le salva.",
     "Hello, World",
     "I like turtles.",
     "0101101001010100101010",
-    "North Korea and Cuba are the only places you can't buy Coca-Cola.",
-    "High heels were invented by a woman who had been kissed on the forehead.",
-    "That was fun!",
-    "Ouch!!! I stepped on a lego shapped object. ",
-    "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu is a place you can visit in New Zealand.",
+    "El fracaso es simplemente una nueva oportunidad de empezar de nuevo, esta vez de forma más inteligente.",
+    "Adentro del Vaticano está todo forrado de oro y afuera los pibes se están muriendo de hambre.",
+    "No malgastes tu tiempo, pues de esa materia está formada la vida.",
+    "No malgastes tu tiempo, pues de esa materia está formada la vida.",
+    "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu es un lugar que puedes visitar en Nueva Zelanda.",
     "There is no place like homework.",
     "Angular is pretty cool.",
     "The MEAN stack is awesome!",
@@ -457,27 +419,26 @@ const getRandom = function (min, max) {
 };
 
 const registerFakeUser = function (gender, email) {
-  // Checks if you should use a female name or male name.
+  // Comprueba si se usa nombre masculino o femenino.
   if (gender == "f") {
     var firstName = femaleNames[getRandom(0, femaleNames.length - 1)];
   } else {
     var firstName = maleNames[getRandom(0, maleNames.length - 1)];
   }
 
-  // The last name is independent of the users gender.
+  // El apellido es independiente del genero.
   lastName = familyNames[getRandom(0, familyNames.length - 1)];
 
-  // This function will return a promise.  The promise gets resolved when the user is saved successfully.
+  // Esta funcion devuelve una promesa que se resuelve cuando se crea el usuario.
   return new Promise(function (resolve, reject) {
-    // Create the user user
+    // Crear el usuario
     let user = new User();
     user.name = firstName + " " + lastName;
     user.email = email;
 
-    // The email follows the same pattern as the name of the images I am using.  That's why I'm setting the profile_image to the, "email".
-    user.profile_image = email;
+    // El email sigue el mismo patron que el nombre de las imagenes.
 
-    // All users have the same password, "f".  It will allow us to log into any account we want.
+    // Contraseña de los usuarios creados= "f".
     user.setPassword("f");
     user = createFakePosts(user, getRandom(8, 16));
     user.save((err, user) => {
@@ -535,12 +496,8 @@ const createFakePosts = function (user, amountOfPosts) {
 
 const makeFriends = function (users) {
   return new Promise(function (resolve, reject) {
-    // The loopThroughUsers() function will be called recursively, each time with a smaller array size.  (The first value will be chopped from beginning of the array each time.)
     function loopThroughUsers(users) {
-      // This function takes in two users, and adds them to each others friends list.
-      // It returns a promise that is resolved when both users have been updated and saved.
       function addEachOther(user1, user2) {
-        // This function saves us from having to write the User.findById... code twice, we write it once and then we can call it for each of the users.
         function addFriend(user1, user2) {
           return new Promise(function (resolve, reject) {
             User.findById(user1, (err, user) => {
@@ -559,10 +516,10 @@ const makeFriends = function (users) {
         }
 
         return new Promise(function (resolve, reject) {
-          // This will add user2 to the user1 friends list
+          // Esto añade el user1 a la lista de amigos del user2
           let p1 = addFriend(user1, user2);
 
-          // This will add user1 to the user2 friends list
+          // Esto añade el user1 a la lista de amigos del user2
           let p2 = addFriend(user2, user1);
 
           Promise.all([p1, p2]).then((val) => {
@@ -571,30 +528,14 @@ const makeFriends = function (users) {
         });
       }
 
-      // The loopThroughUsers() function will return a promise. It will only be resolved when all recursive calls have resolved. (This goes all the way down until the array size is 0, at which point the resolutions will propagate upwards until reaching this original call.)
       return new Promise(function (resolve, reject) {
-        // When the array size is 0, you want to immediately resolve() the promise.
+        // Cuando el array sea 0, que se resuelva la promesa.
         if (users.length == 0) {
           return resolve();
         }
 
-        // Call loopThroughUsers() on a the current users array with the first value removed from the array.  Then store that promise in a variable.
-
-        // You might ask why remove the first value from the array for the next call of the function?
-
-        // We will be looping through the users list and adding friends in that list.
-        // For the first iteration, we will be checking to add friends to the first user.
-
-        // So we might make the user[0] and user[1] friends.
-        // Or user[0] and user[53] friends, etc.
-
-        // By the end of the array, many users will have the first user in the array as a friend.  So we don't need to worry about the first user, user[0], anymore.
-
-        // In short, we remove the first user from the array so to make it impossible to have duplicates in any friend arrays.
-
         let recursionPromise = loopThroughUsers(users.slice(1));
 
-        // Remember that the function that adds the friends together returns a promise, and we'll be adding many friends.  We'll store those promises in an array to be used in a Promise.all().
         let friendRequestPromises = [];
         for (let i = 1; i < users.length; i++) {
           // There is a 50% chance of a user adding a user as a friend.
@@ -603,8 +544,6 @@ const makeFriends = function (users) {
             friendRequestPromises.push(friendRequest);
           }
         }
-
-        // Finally, resolve the loopThroughUsers() function when all of it's friendRequests have been resolved, and the recursionPromise has been resolved.
         Promise.all([...friendRequestPromises, recursionPromise]).then(
           (val) => {
             resolve(val);
@@ -612,8 +551,6 @@ const makeFriends = function (users) {
         );
       });
     }
-
-    // When the original loopThroughUsers() call is resolved, you can resolve the makeFriends promise.
     loopThroughUsers(users).then(() => {
       resolve("Resolve makeFriends() Promise");
     });
@@ -621,10 +558,8 @@ const makeFriends = function (users) {
 };
 
 const createFakeUsers = function (req, res) {
-  // This function will create 70 new users.
-  // It will be calling the registerFakeUser function above.
+  // Esta funcion creara 70 usuarios.
 
-  // This function is called AFTER we delete all users, see code below.
   function create70Users() {
     function create35Users(gender) {
       for (let i = 0; i < 35; i++) {
@@ -648,7 +583,7 @@ const createFakeUsers = function (req, res) {
     });
   }
 
-  // Before creating users, let's delete the current users.
+  // Antes de crear los usuarios, borrar todos los existentes..
   let deleteUsers = new Promise(function (resolve, reject) {
     User.deleteMany({}, (err, info) => {
       if (err) {

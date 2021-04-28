@@ -14,7 +14,7 @@ export class LocalStorageService {
         if(localStorage) {
             localStorage.setItem(key, value);
         } else {
-            alert('Browser does not support the localStorage API');
+            alert('El navegador no soporta localStorage API');
         }
     }
     
@@ -24,7 +24,7 @@ export class LocalStorageService {
                 return localStorage.getItem(key);
             }
         } else {
-            alert('Browser does not support the localStorage API');
+            alert('El navegador no soporta localStorage API');
         }
     }
     
