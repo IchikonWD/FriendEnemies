@@ -1,4 +1,4 @@
 export const environment = {
-    // baseUrl: '<YOUR HEROKU URL>',
+    // baseUrl: '<YOUR URL>',
     production: true
 };
