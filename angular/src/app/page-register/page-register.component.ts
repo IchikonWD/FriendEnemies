@@ -46,7 +46,7 @@ export class PageRegisterComponent implements OnInit {
             return this.formError = "Todos los campos son requeridos.";
         }
         
-        
+        // Descomentar para validar que el formato sea el de correo electronico.
         // var re = new RegExp(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/);
         // if (!re.test(this.credentials.email)) {
         //     return this.formError = "Por favor usa un email válido.";

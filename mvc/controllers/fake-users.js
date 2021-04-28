@@ -437,7 +437,7 @@ const registerFakeUser = function (gender, email) {
     user.email = email;
 
     // El email sigue el mismo patron que el nombre de las imagenes.
-
+    user.profile_image = email;
     // Contraseña de los usuarios creados= "f".
     user.setPassword("f");
     user = createFakePosts(user, getRandom(8, 16));
@@ -538,7 +538,7 @@ const makeFriends = function (users) {
 
         let friendRequestPromises = [];
         for (let i = 1; i < users.length; i++) {
-          // There is a 50% chance of a user adding a user as a friend.
+          // 50% de probabilidad de añadir al usuario como amigo.
           if (getRandom(0, 100) > 50) {
             friendRequest = addEachOther(users[0]._id, users[i]._id);
             friendRequestPromises.push(friendRequest);
