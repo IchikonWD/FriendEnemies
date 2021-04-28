@@ -788,7 +788,7 @@ const deleteAllUsers = function (req, res) {
     if (err) {
       return res.send({ error: err });
     }
-    return res.json({ message: "Deleted All Users", info: info });
+    return res.json({ message: "Borrados todos los usuarios", info: info });
   });
 };
 
